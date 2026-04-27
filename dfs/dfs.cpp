@@ -24,3 +24,27 @@ void dfs(const vector<vector<int>>& grsm, int start) {//в глубину чер
 		}
 	}
 }
+
+int main(){
+	ios::sync_with_stdio(0);//просто 
+	cin.tie(0);    
+	cout.tie(0); 
+	setlocale(LC_ALL, "ru");
+	int n;
+	cout << "Сколько вершин: ";
+	cin >> n;
+	cin.ignore();//ввод списка смежности
+	vector<vector<int>> grsm(n);//список смежности
+	cout << '\n' << "Список смежности:";
+	string s;
+	for (int i = 0; i < n; i++) {//ввели список смежности
+		cout << '\n' << i << ": ";
+		getline(cin, s);
+		istringstream iss(s);
+		int nb;
+		while (iss >> nb) {//разбиваем через пробел через sstream
+			grsm[i].push_back(nb);
+		}
+	}
+
+}
